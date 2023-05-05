@@ -10,9 +10,9 @@ let restart = document.getElementById("restart");
 let userScore = document.getElementById("user-score");
 let start = document.querySelector(".start");
 let startBtn = document.getElementById("start-button");
-
-
-
+let saveScoreBtn = document.getElementById("saveScoreBtn")
+let username = document.getElementById("username")
+const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 let questionCount;
 let scoreCount = 0;
 let count = 70;
@@ -109,6 +109,19 @@ const quizArray = [
         correct: 'Denmark'
     }
 ];
+
+
+restart.addEventListener('click', () => {
+	initial();
+	displayContainer.classList.remove("hide");
+	scoreContainer.classList.add('hide');
+});
+
+function endGame () {
+	displayContainer.classList.add("hide");
+	scoreContainer.classList.remove("hide");
+	userScore.innerHTML = "Score: " + ((scoreCount /quizArray.length)*100) + "%";
+};
 
 nextBtn.addEventListener('click', (displayNext = () =>{
 	questionCount += 1;
@@ -209,7 +222,17 @@ startBtn.addEventListener("click",() => {
 	initial();
 });
 
+function saveHighScore(event) {
+	console.log("clicked the save button!");
+	event.preventDefault();
+	const saveScore = {
+		score: ((scoreCount/quizArray.length)*100),
+		name: username.value
+	};
+	highScores.push(saveScore);
+	localStorage.setItem("highScores", JSON.stringify(highScores));
 
+}
 
 window.onload = () => {
 	start.classList.remove("hide");
