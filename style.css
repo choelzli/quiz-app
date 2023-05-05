@@ -1,0 +1,141 @@
+:root {
+    --pale-green: #84a273 ;
+    --gunmetal: #414e58;
+    --gray: #7a85a6;
+    --white: #f1f5cf;
+}
+
+::selection {
+background-color: var(--pale-green);
+color: var(--gray);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.25rem;
+    line-height: 1.5;
+    height: 100vh;
+    color: var(--gray);
+    background-color: var(--white);
+}
+
+header {
+    text-align: center;
+    background-color: var(--gunmetal);
+
+}
+
+h1 {
+    font-size: 3rem;
+    color: var(--gray);
+    display: inline-block;
+    padding: 1rem 1.2rem;
+}
+
+
+header h1 .alt-color {
+    color:  var(--pale-green)
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: var(--pale-green);
+    margin-right: 2.5rem;
+
+}
+
+.start, .score-container{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#start-button, #restart, #next-button{
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.2rem;
+}
+
+#restart{
+    margin-top: 1rem;
+}
+
+#display-container{
+    background-color: var(--gunmetal);
+    padding: 3rem 1.5rem;
+    width: 80%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 0.5rem;
+}
+
+.quiz-header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.1rem solid var(--white);
+}
+
+.timer-div{
+    background-color: var(--gray);
+    color: var(--white);
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1.5rem;
+
+}
+.question {
+    margin-bottom: 1.25rem;
+}
+
+.option-div {
+    width: 100%;
+    text-align: left;
+    outline: none;
+    background: transparent;
+    border: 0.2rem solid var(--white);
+
+}
+
+.option-div:disabled{
+    color: var(--gunmetal);
+    cursor: not-allowed;
+}
+
+#next-button{
+    margin-top: 1.5rem;
+    background-color: var(--pale-green);
+    color: var(--white);
+    float: right;
+}
+
+.hide{
+    display: none;
+}
+
+.incorrect{
+    background-color: red;
+    color: var(--gunmetal);
+}
+
+.correct{
+    background-color: green;
+    color: var(--pale-green)
+}
+
+#user-score {
+    color: var(--gunmetal);
+}
