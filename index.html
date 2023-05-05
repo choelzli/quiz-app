@@ -30,6 +30,22 @@
             </div>
             <button id="next-button">Next</button>
         </div>
+
+        <div class="score-container hide">
+            <div id="user-score">Total Score</div>
+            <form>
+                <input
+                type="text"
+                name="username"
+                id="username"
+                />
+                <button 
+                id="saveScoreBtn"
+                onclick="saveHighScore(event)"
+                >Save</button>
+            </form>
+            <button id="restart">Restart</button>
+        </div>
     </main>
 <script src="./script.js"></script>
 </body>
